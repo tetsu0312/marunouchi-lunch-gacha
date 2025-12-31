@@ -8,6 +8,10 @@ body {
   background-color: #00afcc;
   color: #333;
   text-align: center;
+
+  /* スクロール禁止 */
+  height: 100vh;
+  overflow: hidden;
 }
 
 /* ==============================
@@ -16,15 +20,17 @@ body {
 
 .center-lane {
   max-width: 480px;
-  min-height: 100vh;
+  height: 100vh;
 
   margin: 0 auto;
-  padding-top: 100px;
-  padding-bottom: 40px;
+
+  /* 上下中央寄せ */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   background-color: #ffffff;
 
-  /* 境界をおしゃれに */
   box-shadow:
     -6px 0 0 rgba(255, 255, 255, 0.6),
      6px 0 0 rgba(255, 255, 255, 0.6),
@@ -37,7 +43,11 @@ body {
 
 h1 {
   color: #c0392b;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
+}
+
+#gachaBtn {
+  margin-bottom: 20px;
 }
 
 /* ==============================
