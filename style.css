@@ -6,6 +6,8 @@ body {
   font-family: sans-serif;
   text-align: center;
   padding-top: 100px;
+  background-color: #f2f7fb;
+  color: #333;
 }
 
 /* ==============================
@@ -48,8 +50,12 @@ body {
    結果表示エリア
 ============================== */
 
-#result {
-  margin-top: 30px;
+body {
+  font-family: sans-serif;
+  text-align: center;
+  padding-top: 100px;
+  background-color: #f2f7fb;
+  color: #333;
 }
 
 /* ==============================
