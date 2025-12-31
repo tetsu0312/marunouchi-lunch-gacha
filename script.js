@@ -135,7 +135,7 @@ result.classList.add("show");
     shop.comments[Math.floor(Math.random() * shop.comments.length)];
 
   document.getElementById("shop").textContent = shop.name;
-  document.getElementById("comment").textContent = comment;
+  document.getElementById("comment").innerHTML = comment;
 
   // 結果ふわっと表示
   result.classList.add("show");
