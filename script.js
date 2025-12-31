@@ -8,6 +8,9 @@ let isSpinning = false;
 // JSONから読み込んだランチ一覧を入れる配列
 let lunchList = [];
 
+// 前回選ばれた店舗を保持
+let lastShop = null;
+
 // ガチャボタンのDOM要素を取得
 const button = document.getElementById("gachaBtn");
 
