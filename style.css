@@ -3,13 +3,8 @@
 ============================== */
 
 body {
-  /* フォントをシンプルに */
   font-family: sans-serif;
-
-  /* 画面中央寄せ */
   text-align: center;
-
-  /* 上に少し余白を持たせる */
   padding-top: 100px;
 }
 
@@ -17,13 +12,36 @@ body {
    ガチャボタンの見た目
 ============================== */
 
-button {
-  /* ボタンを大きめに */
-  font-size: 20px;
-  padding: 15px 30px;
+#gachaBtn {
+  background: linear-gradient(135deg, #ff8a00, #ffb347);
+  color: #fff;
 
-  /* マウスを乗せた時に押せそう感 */
+  font-size: 20px;
+  font-weight: bold;
+
+  padding: 15px 32px;
+
+  border: none;
+  border-radius: 999px;
+
   cursor: pointer;
+
+  /* 立体感 */
+  box-shadow: 0 6px 0 #d96c00;
+
+  /* アニメーション */
+  transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.2s;
+}
+
+/* マウスを乗せた時 */
+#gachaBtn:hover {
+  opacity: 0.9;
+}
+
+/* 押した瞬間 */
+#gachaBtn:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #d96c00;
 }
 
 /* ==============================
@@ -31,7 +49,6 @@ button {
 ============================== */
 
 #result {
-  /* ボタンとの間隔 */
   margin-top: 30px;
 }
 
@@ -39,10 +56,8 @@ button {
    ガチャ回転中（無効状態）
 ============================== */
 
-button:disabled {
-  /* 半透明にして押せない感を出す */
+#gachaBtn:disabled {
   opacity: 0.5;
-
-  /* カーソルも変更 */
   cursor: not-allowed;
+  box-shadow: none;
 }
