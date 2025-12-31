@@ -1,5 +1,5 @@
 /* ==============================
-   全体（背景）
+   額縁（外側）
 ============================== */
 
 body {
@@ -11,18 +11,22 @@ body {
 
   min-height: 100svh;
 
+  /* 額縁の太さ */
+  padding: 40px;
+  box-sizing: border-box;
+
   display: flex;
-  justify-content: center; /* 横中央 */
+
+  /* 額縁は角丸にしない */
 }
 
 /* ==============================
-   中央の白いカード
+   白いカード（中身）
 ============================== */
 
 .center-lane {
   width: 100%;
-  max-width: 480px;
-  min-height: 100svh;
+  min-height: calc(100svh - 80px);
 
   padding: 60px 16px 40px;
   box-sizing: border-box;
@@ -33,11 +37,14 @@ body {
 
   background-color: #ffffff;
 
-  /* 白と水色の境界デザイン */
-  outline: 1px solid rgba(255, 255, 255, 0.7);
+  /* 境界だけ丸める */
+  border-radius: 14px;
+
+  /* ボーダー＆影（境界表現） */
+  outline: 1px solid rgba(255, 255, 255, 0.8);
   box-shadow:
     0 0 0 6px rgba(255, 255, 255, 0.35),
-    0 0 24px rgba(0, 0, 0, 0.15);
+    0 12px 28px rgba(0, 0, 0, 0.18);
 }
 
 /* ==============================
@@ -56,7 +63,6 @@ h1 {
 
 #gachaBtn {
   display: inline-block;
-  width: auto;
 
   padding: 12px 22px;
   font-size: 20px;
@@ -86,14 +92,8 @@ h1 {
   box-shadow: 0 2px 0 #d96c00;
 }
 
-#gachaBtn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  box-shadow: none;
-}
-
 /* ==============================
-   結果表示アニメーション
+   結果アニメーション
 ============================== */
 
 #result {
@@ -109,7 +109,7 @@ h1 {
 }
 
 /* ==============================
-   結果テキスト
+   結果表示
 ============================== */
 
 #shop {
@@ -125,21 +125,20 @@ h1 {
 }
 
 /* ==============================
-   スマホ用調整
+   スマホ用（額縁を少し細く）
 ============================== */
 
 @media (max-width: 480px) {
 
   body {
+    padding: 24px; /* スマホは少し細め */
     font-size: 14px;
   }
 
   .center-lane {
-    max-width: 94vw;
+    min-height: calc(100svh - 48px);
     padding-top: 32px;
     padding-bottom: 24px;
-
-    /* スマホだけ少し丸める */
     border-radius: 12px;
   }
 
