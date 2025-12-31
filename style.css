@@ -11,8 +11,8 @@ body {
 
   /* スクロール禁止 */
   min-height: 100svh;
-  margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* ==============================
@@ -22,14 +22,11 @@ body {
 .center-lane {
   max-width: 480px;
   margin: 0 auto;
-  padding-top: 60px;     /* 上に寄せる */
-  padding-bottom: 40px;
-  min-height: 100svh;
+  padding: 60px 16px 40px;
 
-  /* 上下中央寄せ */
   display: flex;
   flex-direction: column;
-  align-items: center;   /* 横中央 */
+  align-items: center;
 
   background-color: #ffffff;
 
