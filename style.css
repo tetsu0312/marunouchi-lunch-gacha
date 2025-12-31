@@ -1,5 +1,5 @@
 /* ==============================
-   全体（左右の背景）
+   全体（背景）
 ============================== */
 
 body {
@@ -9,20 +9,23 @@ body {
   color: #333;
   text-align: center;
 
-  /* スクロール禁止 */
   min-height: 100svh;
-  overflow-x: hidden;
-  overflow-y: auto;
+
+  display: flex;
+  justify-content: center; /* 横中央 */
 }
 
 /* ==============================
-   中央の白レーン
+   中央の白いカード
 ============================== */
 
 .center-lane {
+  width: 100%;
   max-width: 480px;
-  margin: 0 auto;
+  min-height: 100svh;
+
   padding: 60px 16px 40px;
+  box-sizing: border-box;
 
   display: flex;
   flex-direction: column;
@@ -30,10 +33,11 @@ body {
 
   background-color: #ffffff;
 
+  /* 白と水色の境界デザイン */
+  outline: 1px solid rgba(255, 255, 255, 0.7);
   box-shadow:
-    -6px 0 0 rgba(255, 255, 255, 0.6),
-     6px 0 0 rgba(255, 255, 255, 0.6),
-     0 0 20px rgba(0, 0, 0, 0.15);
+    0 0 0 6px rgba(255, 255, 255, 0.35),
+    0 0 24px rgba(0, 0, 0, 0.15);
 }
 
 /* ==============================
@@ -43,10 +47,7 @@ body {
 h1 {
   color: #c0392b;
   margin-bottom: 24px;
-}
-
-#gachaBtn {
-  margin-bottom: 20px;
+  font-size: 26px;
 }
 
 /* ==============================
@@ -54,20 +55,17 @@ h1 {
 ============================== */
 
 #gachaBtn {
+  display: inline-block;
+  width: auto;
 
-  display: inline-block;   /* 横に伸びすぎない */
-  width: auto;             /* 明示的に横幅を持たせない */
-
-  padding: 12px 22px;     
-  font-size: 18px;
-
-  margin-bottom: 16px;
-   
-  background: linear-gradient(135deg, #ff8a00, #ffb347);
-  color: #fff;
-
+  padding: 12px 22px;
   font-size: 20px;
   font-weight: bold;
+
+  margin-bottom: 16px;
+
+  background: linear-gradient(135deg, #ff8a00, #ffb347);
+  color: #fff;
 
   border: none;
   border-radius: 999px;
@@ -95,7 +93,7 @@ h1 {
 }
 
 /* ==============================
-   結果アニメーション
+   結果表示アニメーション
 ============================== */
 
 #result {
@@ -111,7 +109,7 @@ h1 {
 }
 
 /* ==============================
-   結果表示
+   結果テキスト
 ============================== */
 
 #shop {
@@ -123,11 +121,13 @@ h1 {
 #comment {
   font-size: 16px;
   color: #555;
+  line-height: 1.6;
 }
 
 /* ==============================
-   スマホ用表示調整
+   スマホ用調整
 ============================== */
+
 @media (max-width: 480px) {
 
   body {
@@ -135,9 +135,12 @@ h1 {
   }
 
   .center-lane {
-    max-width: 92vw;
+    max-width: 94vw;
     padding-top: 32px;
     padding-bottom: 24px;
+
+    /* スマホだけ少し丸める */
+    border-radius: 12px;
   }
 
   h1 {
@@ -161,6 +164,5 @@ h1 {
 
   #comment {
     font-size: 14px;
-    line-height: 1.6;
   }
 }
