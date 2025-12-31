@@ -47,20 +47,23 @@ document.getElementById("comment").textContent = "";
 
   // 少し待ってから結果を表示（ガチャ演出）
   setTimeout(() => {
-    // ランチ一覧からランダムで1店舗選ぶ
-    const shop =
-      lunchList[Math.floor(Math.random() * lunchList.length)];
+  let shop;
 
-    // 選ばれた店舗のコメントからランダムで1つ選ぶ
-    const comment =
-      shop.comments[Math.floor(Math.random() * shop.comments.length)];
+  // 前回と同じ店にならないようにする
+  do {
+    shop = lunchList[Math.floor(Math.random() * lunchList.length)];
+  } while (shop.name === lastShop);
 
-    // 画面に結果を表示
-    document.getElementById("shop").textContent = shop.name;
-    document.getElementById("comment").textContent = comment;
+  const comment =
+    shop.comments[Math.floor(Math.random() * shop.comments.length)];
 
-    // ガチャ回転終了
-    isSpinning = false;
-    button.disabled = false;
-  }, 800); // 0.8秒待つ
+  document.getElementById("shop").textContent = shop.name;
+  document.getElementById("comment").textContent = comment;
+
+  // 今回の店を保存
+  lastShop = shop.name;
+
+  isSpinning = false;
+  button.disabled = false;
+}, 1000); // 1秒待つ
 });
