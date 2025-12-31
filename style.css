@@ -200,6 +200,22 @@ body {
   text-decoration: none;
 }
 
+/* ==============================
+   about.html調整用
+============================== */
+
+.about {
+  text-align: left;
+}
+
+.about h1 {
+  text-align: center; /* タイトルだけ中央 */
+}
+
+.about p {
+  line-height: 1.8;
+}
+
 .footer a:hover {
   text-decoration: underline;
 }
