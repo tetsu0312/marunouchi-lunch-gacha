@@ -42,8 +42,7 @@ button.addEventListener("click", () => {
   button.disabled = true;
 
   // 回転中の表示
-  document.getElementById("shop").textContent = "ガチャ回し中…";
-  document.getElementById("comment").textContent = "";
+  document.getElementById("shop").textContent = "ガチャガチャ…😋";t.getElementById("comment").textContent = "";
 
   // 少し待ってから結果を表示（ガチャ演出）
   setTimeout(() => {
