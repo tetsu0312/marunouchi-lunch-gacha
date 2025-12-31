@@ -124,5 +124,5 @@ document.getElementById("comment").textContent = "";
 
   isSpinning = false;
   button.disabled = false;
-}, 1000); // 1秒待つ
+}, 1300); // 1.3秒待つ
 });
