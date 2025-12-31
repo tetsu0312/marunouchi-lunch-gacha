@@ -1,33 +1,47 @@
 /* ==============================
-   全体のレイアウト設定
+   全体（左右の背景）
 ============================== */
 
 body {
+  margin: 0;
   font-family: sans-serif;
-  text-align: center;
-  padding-top: 100px;
-  background-color: #d1ffff;
+  background-color: #00afcc;
   color: #333;
-}
-
-h1 {
-  color: #2c4a6e;
-  margin-bottom: 30px;
-}
-
-#shop {
-  font-size: 22px;
-  color: #1f3b57;
-  margin-bottom: 12px;
-}
-
-#comment {
-  font-size: 16px;
-  color: #555;
+  text-align: center;
 }
 
 /* ==============================
-   ガチャボタンの見た目
+   中央の白レーン
+============================== */
+
+.center-lane {
+  max-width: 480px;
+  min-height: 100vh;
+
+  margin: 0 auto;
+  padding-top: 100px;
+  padding-bottom: 40px;
+
+  background-color: #ffffff;
+
+  /* 境界をおしゃれに */
+  box-shadow:
+    -6px 0 0 rgba(255, 255, 255, 0.6),
+     6px 0 0 rgba(255, 255, 255, 0.6),
+     0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ==============================
+   タイトル
+============================== */
+
+h1 {
+  color: #c0392b;
+  margin-bottom: 30px;
+}
+
+/* ==============================
+   ガチャボタン
 ============================== */
 
 #gachaBtn {
@@ -38,48 +52,44 @@ h1 {
   font-weight: bold;
 
   padding: 15px 32px;
+  margin-bottom: 24px;
 
   border: none;
   border-radius: 999px;
 
   cursor: pointer;
 
-  /* 立体感 */
   box-shadow: 0 6px 0 #d96c00;
 
-  /* アニメーション */
   transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.2s;
 }
 
-/* マウスを乗せた時 */
 #gachaBtn:hover {
   opacity: 0.9;
 }
 
-/* 押した瞬間 */
 #gachaBtn:active {
   transform: translateY(4px);
   box-shadow: 0 2px 0 #d96c00;
 }
 
-/* ==============================
-   結果表示エリア
-============================== */
-
-body {
-  font-family: sans-serif;
-  text-align: center;
-  padding-top: 100px;
-  background-color: #f2f7fb;
-  color: #333;
-}
-
-/* ==============================
-   ガチャ回転中（無効状態）
-============================== */
-
 #gachaBtn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   box-shadow: none;
+}
+
+/* ==============================
+   結果表示
+============================== */
+
+#shop {
+  font-size: 22px;
+  color: #1f3b57;
+  margin-bottom: 12px;
+}
+
+#comment {
+  font-size: 16px;
+  color: #555;
 }
