@@ -14,6 +14,9 @@ let lastShop = null;
 // ガチャボタンのDOM要素を取得
 const button = document.getElementById("gachaBtn");
 
+// 結果アニメーション用
+const result = document.getElementById("result");
+
 // ==============================
 // ランチデータ（JSON）を読み込む
 // ==============================
@@ -41,6 +44,12 @@ button.addEventListener("click", () => {
   isSpinning = true;
   button.disabled = true;
 
+  // ボタンぷるぷる開始
+button.classList.add("spinning");
+
+// 結果を一旦非表示（ふわっ準備）
+result.classList.remove("show");
+
   // 回転中の表示
 document.getElementById("shop").textContent = "ガチャ回し中…😋";
 document.getElementById("comment").textContent = "";
@@ -59,6 +68,12 @@ document.getElementById("comment").textContent = "";
 
   document.getElementById("shop").textContent = shop.name;
   document.getElementById("comment").textContent = comment;
+
+  // 結果ふわっと表示
+  result.classList.add("show");
+
+  // ボタンぷるぷる停止
+  button.classList.remove("spinning");
 
   // 今回の店を保存
   lastShop = shop.name;
