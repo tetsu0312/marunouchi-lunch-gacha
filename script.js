@@ -44,12 +44,6 @@ button.addEventListener("click", () => {
   isSpinning = true;
   button.disabled = true;
 
-  // ボタンぷるぷる開始
-button.classList.add("spinning");
-
-// 結果を一旦非表示（ふわっ準備）
-result.classList.remove("show");
-
   // 回転中の表示
 document.getElementById("shop").textContent = "ガチャ回し中…😋";
 document.getElementById("comment").textContent = "";
