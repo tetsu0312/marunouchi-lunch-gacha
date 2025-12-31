@@ -11,6 +11,7 @@ body {
 
   /* スクロール禁止 */
   min-height: 100svh;
+  margin: 0;
   overflow: hidden;
 }
 
