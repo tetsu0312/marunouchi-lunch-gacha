@@ -126,5 +126,5 @@ result.classList.add("show");
 
   isSpinning = false;
   button.disabled = false;
-}, 1300); // 1.3秒待つ
+}, 1500); // 1.5秒待つ
 });
