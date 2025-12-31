@@ -97,6 +97,8 @@ const message =
 
 document.getElementById("shop").textContent = message;
 document.getElementById("comment").textContent = "";
+  // 初回でも表示されるようにする
+result.classList.add("show");
 
   // 少し待ってから結果を表示（ガチャ演出）
   setTimeout(() => {
