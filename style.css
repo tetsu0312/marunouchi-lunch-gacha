@@ -205,17 +205,16 @@ body {
 ============================== */
 
 .about {
-  text-align: left;
+  align-items: stretch; /* flex中央寄せを解除 */
 }
 
 .about h1 {
-  text-align: center; /* タイトルだけ中央 */
+  text-align: center;   /* タイトルだけ中央 */
 }
 
 .about p {
+  max-width: 520px;     /* 行幅を揃える */
+  margin: 0 auto 16px;  /* 見た目を中央に */
+  text-align: left;     /* 文章は左揃え */
   line-height: 1.8;
-}
-
-.footer a:hover {
-  text-decoration: underline;
 }
