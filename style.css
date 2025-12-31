@@ -98,12 +98,40 @@ h1 {
 }
 
 /* ==============================
-   結果表示
+   ガチャ回転中アニメーション
+============================== */
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-2deg); }
+  100% { transform: rotate(0deg); }
+}
+
+#gachaBtn.spinning {
+  animation: shake 0.4s infinite;
+}
+
+/* ==============================
+   結果アニメーション
 ============================== */
 
 #result {
-  margin-top: 40px;   /* 上エリアと分離 */
+  margin-top: 40px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
+
+#result.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==============================
+   結果表示
+============================== */
 
 #shop {
   font-size: 22px;
